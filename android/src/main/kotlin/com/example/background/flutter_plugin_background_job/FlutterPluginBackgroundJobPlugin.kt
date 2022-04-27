@@ -14,6 +14,13 @@ class FlutterPluginBackgroundJobPlugin: FlutterPlugin, MethodCallHandler {
   ///
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
   /// when the Flutter Engine is detached from the Activity
+  companion object {
+    @JvmStatic
+    private val TAG = "BackgroundPlugin"
+    @JvmStatic
+    val CALLBACK_HANDLE_KEY = "callback_handle"
+  }
+
   private lateinit var channel : MethodChannel
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
